@@ -6,10 +6,6 @@ public class Opgave04 {
         int[] array2 = {2, 4, 6, 8};
         System.out.println("Løst ved hjælp af for løkke:");
         printArray(combinedArrayFor(array1, array2));
-        System.out.println();
-        System.out.println();
-        System.out.println("løst ved hjælp af while løkke:");
-        printArray(combinedArrayWhile(array1, array2));
     }
 
     public static void printArray(int[] array) {
@@ -42,32 +38,6 @@ public class Opgave04 {
             }
         }
 
-        return combinedArray;
-    }
-
-    public static int[] combinedArrayWhile(int[] array1, int[] array2) {
-        int[] combinedArray = new int[array1.length + array2.length];
-        int i = 0; // Tæller for array1
-        int j = 0; // Tæller for array2
-        int k = 0; // Tæller for combinedArray
-
-        // Træk det mindste element, så længe der er elementer i begge arrays
-        while (i < array1.length && j < array2.length) {
-            if (array1[i] <= array2[j]) {
-                combinedArray[k++] = array1[i++];
-            } else {
-                combinedArray[k++] = array2[j++];
-            }
-            // Kopier eventuelle resterende elementer fra array1
-            while (i < array1.length) {
-                combinedArray[k++] = array1[i++];
-            }
-
-            // Kopier eventuelle resterende elementer fra array2
-            while (j < array2.length) {
-                combinedArray[k++] = array2[j++];
-            }
-        }
         return combinedArray;
     }
 }
