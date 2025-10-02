@@ -124,9 +124,9 @@ public class Opgave02 {
     //Opgave 2.3
     public static int minElement(int[] array) {
         int minElement = array[0];
-        for (int index = 0; index < array.length; index++) {
-            if (array[index] < minElement) {
-                minElement = array[index];
+        for (int i : array) {
+            if (i < minElement) {
+                minElement = i;
             }
         }
         return minElement;
@@ -158,18 +158,13 @@ public class Opgave02 {
     public static int secondBiggestNumber(int[] array) {
         int maxNumber = array[0];
         int secondMaxNumber = array[1];
-        if (maxNumber < secondMaxNumber) {
-            int temp = maxNumber;
-            maxNumber = secondMaxNumber;
-            secondMaxNumber = temp;
-        }
+
         for (int index = 1; index < array.length; index++) {
             if (array[index] > maxNumber) {
                 secondMaxNumber = maxNumber;
                 maxNumber = array[index];
             } else if (array[index] > secondMaxNumber) {
                 secondMaxNumber = array[index];
-
             }
         }
         return secondMaxNumber;
@@ -217,7 +212,7 @@ public class Opgave02 {
 
     //Opgave 2.8
     public static boolean ifAnArrayHasDuplicates(int[] array) {
-        for (int index = 0; index < array.length - 1; index++) { //Køre igennem det første array undtagen det sidste element
+        for (int index = 0; index < array.length; index++) { //Køre igennem det første array undtagen det sidste element
             for (int j = index + 1; j < array.length; j++) { //Køre igennem arrayet fra det "2" element og til slutningen
                 if (array[j] == array[index]) { //Her sammenligner vi de 2 arrays for at tjekke for dubletter
                     return true;
